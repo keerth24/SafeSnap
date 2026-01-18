@@ -1,4 +1,6 @@
-/* Basic Reset */
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,75 +9,98 @@
 }
 
 body {
-  background: #0f0f0f;
-  color: #fff;
+  background: radial-gradient(circle at top, #101820, #05080d);
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Hero Section */
+/* =========================
+   COMMON ELEMENTS
+========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
   text-align: center;
+}
+
+.hero-content {
+  padding: 60px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 40px rgba(0, 255, 240, 0.25);
+  animation: fadeUp 1.2s ease forwards;
 }
 
 .hero h1 {
   font-size: 4rem;
   color: #00fff0;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  margin: 20px 0;
-  color: #aaa;
+  font-size: 1.3rem;
+  color: #b0b0b0;
+  margin-bottom: 30px;
 }
 
 .btn {
-  padding: 12px 30px;
-  background: #00fff0;
-  color: #0f0f0f;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 10px;
-  transition: 0.3s ease;
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00fff0, #00c9b7);
+  color: #021616;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.35s ease;
 }
 
 .btn:hover {
-  background: #00d9c1;
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px #00fff0;
 }
 
-/* Features Section */
+/* =========================
+   FEATURES SECTION
+========================= */
 .features {
-  padding: 80px 20px;
+  padding: 90px 8%;
   text-align: center;
 }
 
 .features h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  font-size: 2.6rem;
   color: #00fff0;
+  margin-bottom: 55px;
 }
 
 .feature-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
 }
 
 .card {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-  transition: 0.5s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #00fff0;
+  backdrop-filter: blur(16px);
+  padding: 35px 25px;
+  border-radius: 22px;
+  transition: 0.45s ease;
 }
 
 .card h3 {
@@ -84,33 +109,134 @@ body {
 }
 
 .card p {
-  color: #ccc;
+  color: #c7c7c7;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-/* CTA Section */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 255, 240, 0.35);
+}
+
+/* =========================
+   CTA SECTION
+========================= */
 .cta {
-  padding: 60px 20px;
+  margin: 70px auto;
+  width: 85%;
+  padding: 60px;
   text-align: center;
-  background: linear-gradient(135deg, #111, #222);
-  margin-top: 40px;
-  border-radius: 20px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #071318, #0d1f26);
+  box-shadow: 0 0 40px rgba(0, 255, 240, 0.25);
 }
 
 .cta h2 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   color: #00fff0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-.cta .btn {
-  font-size: 1.2rem;
-}
-
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 footer {
-  padding: 20px;
   text-align: center;
-  background: #111;
+  padding: 25px;
+  background: #020507;
   color: #777;
-  margin-top: 40px;
+}
+
+/* =========================
+   UPLOAD PAGE
+========================= */
+.upload-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-card {
+  width: 90%;
+  max-width: 430px;
+  padding: 45px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  box-shadow: 0 0 35px rgba(0, 255, 240, 0.3);
+}
+
+.upload-card h2 {
+  color: #00fff0;
+  margin-bottom: 10px;
+}
+
+.upload-card p {
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+.upload-card input {
+  width: 100%;
+  padding: 12px;
+  background: #080d12;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.upload-card button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #00fff0, #00c9b7);
+  color: #021616;
+  font-weight: bold;
+  transition: 0.35s ease;
+}
+
+.upload-card button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px #00fff0;
+}
+
+.result-card {
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.result-card span {
+  font-size: 1.5rem;
+  color: #00fff0;
+}
+
+.hidden {
+  display: none;
+}
+
+.back-link {
+  display: block;
+  margin-top: 25px;
+  color: #888;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
