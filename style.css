@@ -42,6 +42,10 @@ a {
   font-size: 1.05rem;
 }
 
+.btn-primary.full {
+  width: 100%;
+}
+
 .btn-outline {
   padding: 10px 22px;
   border-radius: 12px;
@@ -136,10 +140,6 @@ a {
   margin-bottom: 15px;
 }
 
-.glass-card h3 {
-  margin-bottom: 10px;
-}
-
 /* =========================
    FEATURES
 ========================= */
@@ -174,15 +174,6 @@ a {
   margin-bottom: 15px;
 }
 
-.feature-card h4 {
-  margin-bottom: 10px;
-}
-
-.feature-card p {
-  color: #c7cfd6;
-  font-size: 0.95rem;
-}
-
 .feature-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 0 30px rgba(0,255,240,0.35);
@@ -199,13 +190,8 @@ a {
   margin: 40px 6%;
 }
 
-.cta-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-}
-
 /* =========================
-   AUTH PAGES (LOGIN / REGISTER)
+   AUTH PAGES
 ========================= */
 .auth-layout {
   min-height: 100vh;
@@ -216,13 +202,13 @@ a {
 }
 
 .auth-card {
-  width: 100%;
   max-width: 420px;
+  width: 100%;
   padding: 45px 35px;
   border-radius: 26px;
-  text-align: center;
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(22px);
+  text-align: center;
   box-shadow: 0 0 35px rgba(0,255,240,0.25);
 }
 
@@ -230,16 +216,6 @@ a {
   font-size: 3rem;
   color: #00fff0;
   margin-bottom: 15px;
-}
-
-.auth-card h2 {
-  margin-bottom: 8px;
-}
-
-.auth-card p {
-  color: #b6c0c9;
-  font-size: 0.95rem;
-  margin-bottom: 30px;
 }
 
 .input-group {
@@ -262,20 +238,79 @@ a {
   outline: none;
   color: #fff;
   width: 100%;
-  font-size: 0.95rem;
 }
 
-.btn-primary.full {
+/* =========================
+   UPLOAD PAGE
+========================= */
+.upload-layout {
+  min-height: 100vh;
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-card {
+  max-width: 420px;
   width: 100%;
-  margin-top: 10px;
+  padding: 45px 35px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(22px);
+  text-align: center;
+  box-shadow: 0 0 35px rgba(0,255,240,0.25);
 }
 
-.auth-footer {
+.upload-icon {
+  font-size: 3rem;
+  color: #00fff0;
+  margin-bottom: 15px;
+}
+
+.risk-card {
   margin-top: 25px;
-  font-size: 0.9rem;
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.45);
 }
 
-.auth-footer a {
+.hidden {
+  display: none;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+.dashboard-layout {
+  padding: 140px 8% 80px;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.dashboard-card {
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 30px rgba(0,255,240,0.25);
+}
+
+.dashboard-card h3 {
+  margin-bottom: 10px;
+}
+
+.dashboard-card span {
+  font-size: 1.8rem;
   color: #00fff0;
 }
 
@@ -296,10 +331,6 @@ footer {
   .hero-layout {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-
-  .hero-visual {
-    margin-top: 40px;
   }
 
   .top-nav nav {
