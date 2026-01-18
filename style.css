@@ -205,6 +205,81 @@ a {
 }
 
 /* =========================
+   AUTH PAGES (LOGIN / REGISTER)
+========================= */
+.auth-layout {
+  min-height: 100vh;
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 45px 35px;
+  border-radius: 26px;
+  text-align: center;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 0 35px rgba(0,255,240,0.25);
+}
+
+.auth-icon {
+  font-size: 3rem;
+  color: #00fff0;
+  margin-bottom: 15px;
+}
+
+.auth-card h2 {
+  margin-bottom: 8px;
+}
+
+.auth-card p {
+  color: #b6c0c9;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.35);
+  padding: 14px 16px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.input-group i {
+  color: #00fff0;
+  margin-right: 12px;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.btn-primary.full {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.auth-footer {
+  margin-top: 25px;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: #00fff0;
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer {
