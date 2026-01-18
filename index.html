@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SafeSnap</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeSnap - Protect Your Photos</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <h1>SafeSnap</h1>
-  <p>Protect your personal photos from online misuse</p>
 
-  <a href="login.html">Login</a> |
-  <a href="register.html">Register</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>SafeSnap</h1>
+      <p>Protect Your Personal Photos from Online Misuse</p>
+      <a href="upload.html" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2 data-aos="fade-up">Features</h2>
+    <div class="feature-cards">
+      <div class="card" data-aos="fade-right">
+        <h3>Duplicate Detection</h3>
+        <p>Detect if your photos are reused or copied elsewhere.</p>
+      </div>
+      <div class="card" data-aos="fade-up">
+        <h3>Fake Profile Awareness</h3>
+        <p>Know if someone is using your photo in fake accounts.</p>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <h3>Photo Protection</h3>
+        <p>Upload and safeguard your images with simulated protection.</p>
+      </div>
+      <div class="card" data-aos="fade-up">
+        <h3>Privacy Awareness</h3>
+        <p>Learn how to keep your photos safe online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta" data-aos="zoom-in">
+    <h2>Secure Your Digital Identity</h2>
+    <a href="upload.html" class="btn">Protect Your Photos Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 SafeSnap | Final Year Project</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+    });
+  </script>
+
 </body>
 </html>
