@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <title>Upload Photo – SafeSnap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MAIN CSS (THIS IS THE LINE THAT MATTERS) -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -15,7 +19,7 @@
     <h2>Upload Your Photo</h2>
     <p>Check how risky your photo is online</p>
 
-    <input type="file" id="photoInput" accept="image/*">
+    <input type="file" accept="image/*">
 
     <button onclick="analyzePhoto()">Analyze Risk</button>
 
@@ -36,15 +40,15 @@
   function analyzePhoto() {
     const levels = ["LOW", "MEDIUM", "HIGH"];
     const messages = {
-      LOW: "Photo has minimal exposure risk.",
-      MEDIUM: "Photo may be misused on public platforms.",
-      HIGH: "High chance of misuse through fake profiles or reposting."
+      LOW: "Minimal exposure risk detected.",
+      MEDIUM: "Possible misuse on public platforms.",
+      HIGH: "High risk of misuse through fake profiles or reposting."
     };
 
-    const randomLevel = levels[Math.floor(Math.random() * levels.length)];
+    const risk = levels[Math.floor(Math.random() * levels.length)];
 
-    document.getElementById("riskLevel").innerText = randomLevel;
-    document.getElementById("riskText").innerText = messages[randomLevel];
+    document.getElementById("riskLevel").innerText = risk;
+    document.getElementById("riskText").innerText = messages[risk];
     document.getElementById("result").classList.remove("hidden");
   }
 </script>
