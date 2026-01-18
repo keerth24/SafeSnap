@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register – SafeSnap</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h2>Create SafeSnap Account</h2>
+
+  <form>
+    <label>Name:</label><br>
+    <input type="text" placeholder="Enter your name"><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" placeholder="Enter email"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" placeholder="Create password"><br><br>
+
+    <button type="button" onclick="register()">Register</button>
+  </form>
+
+  <p>Already have an account? <a href="login.html">Login</a></p>
+
+  <script>
+    function register() {
+      alert("Registration successful (demo)");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
