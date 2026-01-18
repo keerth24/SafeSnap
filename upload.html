@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Upload Photo – SafeSnap</title>
   <meta charset="UTF-8">
+  <title>Upload Photo – SafeSnap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-  <h2>Upload & Protect Your Photo</h2>
 
-  <form>
-    <input type="file" accept="image/*"><br><br>
+<section class="upload-container">
+  <div class="upload-card" data-aos="fade-up">
+    <h2>Upload Your Photo</h2>
+    <p>Check how risky your photo is online</p>
 
-    <button type="button" onclick="protectPhoto()">Protect Photo</button>
-  </form>
+    <input type="file" id="photoInput" accept="image/*">
 
-  <p id="status"></p>
+    <button onclick="analyzePhoto()">Analyze Risk</button>
 
-  <br>
-  <a href="dashboard.html">Back to Dashboard</a>
+    <div id="result" class="result-card hidden">
+      <h3>Exposure Risk</h3>
+      <span id="riskLevel"></span>
+      <p id="riskText"></p>
+    </div>
 
-  <script>
-    function protectPhoto() {
-      document.getElementById("status").innerHTML =
-        "Photo uploaded and protected successfully.";
-    }
-  </script>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000 });
+
+  function analyzePhoto() {
+    const levels = ["LOW", "MEDIUM", "HIGH"];
+    const messages = {
+      LOW: "Photo has minimal exposure risk.",
+      MEDIUM: "Photo may be misused on public platforms.",
+      HIGH: "High chance of misuse through fake profiles or reposting."
+    };
+
+    const randomLevel = levels[Math.floor(Math.random() * levels.length)];
+
+    document.getElementById("riskLevel").innerText = randomLevel;
+    document.getElementById("riskText").innerText = messages[randomLevel];
+    document.getElementById("result").classList.remove("hidden");
+  }
+</script>
+
 </body>
 </html>
