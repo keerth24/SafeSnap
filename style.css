@@ -28,6 +28,75 @@ button {
 }
 
 /* =========================
+   GLOBAL NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 30px rgba(0, 255, 240, 0.25);
+
+  z-index: 999;
+  animation: slideDown 0.8s ease;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00fff0;
+  letter-spacing: 1px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-right a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.nav-right a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.nav-btn.primary {
+  background: linear-gradient(135deg, #00fff0, #00c9b7);
+  color: #021616;
+  font-weight: bold;
+  border: none;
+}
+
+.nav-btn.primary:hover {
+  box-shadow: 0 0 20px #00fff0;
+}
+
+/* =========================
    HERO SECTION
 ========================= */
 .hero {
@@ -238,5 +307,16 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
