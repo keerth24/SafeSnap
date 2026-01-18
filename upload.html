@@ -2,70 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Upload Photo – SafeSnap</title>
+  <title>Protect Photo – SafeSnap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- MAIN CSS (THIS IS THE LINE THAT MATTERS) -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- AOS Animation Library -->
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-<!-- GLOBAL NAVBAR -->
-<nav class="navbar">
-  <div class="nav-left">
-    <span class="logo">SafeSnap</span>
+
+<!-- TOP NAV -->
+<header class="top-nav">
+  <div class="nav-container">
+    <div class="brand">SafeSnap</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="btn-outline">Logout</a>
+    </nav>
   </div>
+</header>
 
-  <div class="nav-right">
-    <a href="index.html">Home</a>
-    <a href="upload.html">Upload</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="login.html" class="nav-btn">Login</a>
-    <a href="register.html" class="nav-btn primary">Sign Up</a>
-  </div>
-</nav>
-
-<div style="height:110px;"></div>
-
-<section class="upload-container">
+<!-- UPLOAD LAYOUT -->
+<section class="upload-layout">
   <div class="upload-card" data-aos="fade-up">
+    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
     <h2>Upload Your Photo</h2>
-    <p>Check how risky your photo is online</p>
+    <p>Analyze exposure risk and prevent misuse</p>
 
-    <input type="file" accept="image/*">
+    <input type="file" id="photoInput" accept="image/*">
 
-    <button onclick="analyzePhoto()">Analyze Risk</button>
+    <button class="btn-primary full" onclick="analyzePhoto()">
+      Analyze Risk
+    </button>
 
-    <div id="result" class="result-card hidden">
+    <!-- RESULT -->
+    <div id="riskResult" class="risk-card hidden">
       <h3>Exposure Risk</h3>
       <span id="riskLevel"></span>
       <p id="riskText"></p>
     </div>
-
-    <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 </section>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 1000 });
+  AOS.init({ duration: 900, once: true });
 
   function analyzePhoto() {
     const levels = ["LOW", "MEDIUM", "HIGH"];
     const messages = {
-      LOW: "Minimal exposure risk detected.",
-      MEDIUM: "Possible misuse on public platforms.",
-      HIGH: "High risk of misuse through fake profiles or reposting."
+      LOW: "Low chance of misuse. Photo appears safe.",
+      MEDIUM: "Possible misuse if shared publicly.",
+      HIGH: "High risk of fake profile or reposting."
     };
 
     const risk = levels[Math.floor(Math.random() * levels.length)];
 
     document.getElementById("riskLevel").innerText = risk;
     document.getElementById("riskText").innerText = messages[risk];
-    document.getElementById("result").classList.remove("hidden");
+    document.getElementById("riskResult").classList.remove("hidden");
   }
 </script>
 
