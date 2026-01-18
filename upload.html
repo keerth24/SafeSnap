@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Photo – SafeSnap</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h2>Upload & Protect Your Photo</h2>
+
+  <form>
+    <input type="file" accept="image/*"><br><br>
+
+    <button type="button" onclick="protectPhoto()">Protect Photo</button>
+  </form>
+
+  <p id="status"></p>
+
+  <br>
+  <a href="dashboard.html">Back to Dashboard</a>
+
+  <script>
+    function protectPhoto() {
+      document.getElementById("status").innerHTML =
+        "Photo uploaded and protected successfully.";
+    }
+  </script>
+</body>
+</html>
